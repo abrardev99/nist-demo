@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Table</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">nist_csf_cats_3</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-4 mb-2">
+        <div class="input-group">
+          <select class="version-select custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option value="1" selected>Version 1</option>
+            <option value="2">Version 2</option>
+            <option value="3">Version 3</option>
+          </select>
+          <div class="input-group-append">
+            <button id="btn-version" class="btn btn-outline-secondary" type="button">Default</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <table class="table table-striped table-bordered">
+          <thead>
+          <tr>
+            <td rowspan="2">Sub-Category</td>
+            <td data-original-title="How well do your corporate policies, procedures, standards, and guidelines satisfy the NIST CSF requirements?" data-toggle="tooltip" colspan="4" width="30%">Policy Maturity</td>
+            <td data-original-title="How well do your actual operational practices satisfy the NIST CSF requirements regardless of what your policies &amp; standards say" data-toggle="tooltip" colspan="4" width="30%">Practice Maturity</td>
+          </tr>
+          <tr>
+            <?php for($i=0; $i<=3; $i++): ?>
+              <td><?php echo $startingYear + $i; ?></td>
+            <?php endfor; ?>
+
+            <?php for($i=0; $i<=3; $i++): ?>
+              <td><?php echo $startingYear + $i; ?></td>
+            <?php endfor; ?>
+
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">ID-AM-1</th>
+            <td><input class="nist-table-input form-control" value="2"></td>
+            <td><input class="nist-table-input form-control" value="3"></td>
+            <td><input class="nist-table-input form-control" value="4"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+            <td><input class="nist-table-input form-control" value="8"></td>
+            <td><input class="nist-table-input form-control" value="7"></td>
+            <td><input class="nist-table-input form-control" value="6"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+          </tr>
+          <tr>
+            <th scope="row">ID-AM-2</th>
+            <td><input class="nist-table-input form-control" value="8"></td>
+            <td><input class="nist-table-input form-control" value="7"></td>
+            <td><input class="nist-table-input form-control" value="6"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+            <td><input class="nist-table-input form-control" value="2"></td>
+            <td><input class="nist-table-input form-control" value="3"></td>
+            <td><input class="nist-table-input form-control" value="4"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+          </tr>
+          <tr>
+            <th scope="row">ID-AM-3</th>
+            <td><input class="nist-table-input form-control" value="2"></td>
+            <td><input class="nist-table-input form-control" value="3"></td>
+            <td><input class="nist-table-input form-control" value="4"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+            <td><input class="nist-table-input form-control" value="8"></td>
+            <td><input class="nist-table-input form-control" value="7"></td>
+            <td><input class="nist-table-input form-control" value="6"></td>
+            <td><input class="nist-table-input form-control" value="5"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $('.nist-table-input').focusout(function (){
+      alert('New Value saved to database: '+ this.value)
+    });
+
+    $('.version-select').on('change', function() {
+      $('#btn-version').text('Make Default');
+      $('#btn-version').addClass('btn-success');
+
+      console.log('fetching '+this.value+ ' values...');
+    });
+
+  </script>
+</body>
+
+</html>
